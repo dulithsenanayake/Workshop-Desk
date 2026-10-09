@@ -1,12 +1,11 @@
 import { useState } from 'react';
-import { Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
 import { Alert } from '../components/ui.jsx';
 
 export default function LoginPage() {
   const { user, login } = useAuth();
   const navigate = useNavigate();
-  const location = useLocation();
   const [form, setForm] = useState({ email: '', password: '' });
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
@@ -19,7 +18,8 @@ export default function LoginPage() {
     setError('');
     try {
       await login(form.email, form.password);
-      navigate(location.state?.from?.pathname ?? '/', { replace: true });
+      // Always land on the role's home screen: a remembered page may belong to a different role.
+      navigate('/', { replace: true });
     } catch (err) {
       setError(err.message);
     } finally {
