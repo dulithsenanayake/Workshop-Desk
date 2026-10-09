@@ -84,8 +84,3 @@ frontend/src/
 ## Maintenance
 
 `npm run reconcile` (in `backend`) recomputes every workshop's seat counter from the registration records. It should always report 0 corrections; it exists as a safety net.
-
-## Deploying (optional)
-
-Frontend: any static host (`npm run build`, set `VITE_API_URL`). API: any Node host with MongoDB Atlas (free tier);
-set `NODE_ENV=production`, `MONGO_URI`, a long random `JWT_SECRET`, and `CORS_ORIGIN` to the frontend URL. Do not run `seed` in production with the demo passwords.
