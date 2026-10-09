@@ -77,7 +77,7 @@ label.inline { flex-direction: row; align-items: center; gap: .5rem; }
 
 /* buttons */
 .btn { font: inherit; font-weight: 600; padding: .55rem 1rem; min-height: 2.5rem; border-radius: 6px; border: 1px solid #aebbb6; background: #fff; color: var(--ink); cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; }
-.btn:hover:not(:disabled) { background: #eef2ef; }
+.btn:hover:not(:disabled) { background: #438553; }
 .btn:disabled { opacity: .5; cursor: not-allowed; }
 .btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
 .btn-primary:hover:not(:disabled) { background: #0d2220; }
